@@ -10,7 +10,7 @@ const register = async (req, res) => {
     if (!user) {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
-
+    console.log(connection_url);
     // Update the user's connection_url
     user.connection_url = connection_url;
     await user.save();
